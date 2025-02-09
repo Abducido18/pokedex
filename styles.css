@@ -1,0 +1,325 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(105, 105, 105);;
+  box-sizing: border-box;
+
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  all: unset;
+}
+
+li {
+  list-style: none;
+}
+
+/*******************************
+ *  GameBoy Body Styles
+ *******************************/
+
+ .game-body {
+  width: 70vh;
+  height: 95vh;
+  background-color:rgba(96, 58, 159);
+  border-top-left-radius:9px;
+  border-top-right-radius:9px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0px 24px 25px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+/*******************************
+ *  Screen Styles
+ *******************************/
+
+ .screen-wrapper {
+  width: 65vh;
+  height: 52vh;
+  margin-top: 2vh;
+  background-color: rgb(63, 61, 72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: inset 0px 10px 10px 30px rgba(0, 0, 0, 0.3);
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.screen {
+  width: 57vh;
+  height: 45vh;
+  background: url("./images/screen-background.png");
+  margin-top: 2vh;
+  box-shadow: inset 10px 10px 100px 20px rgba(0,0,0,10), -100px -100px 2px 3px rgba(0, 0, 0, 0);
+  border-radius: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid black;
+  box-sizing: border-box;
+}
+
+.pokemon-info-wrapper {
+  width: 25vh;
+  height: 43vh;
+  border: 5px solid rgb(218, 218, 218);
+  border-radius: 10px;
+  box-shadow: inset 0px 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon-info {
+  width: 24vh;
+  height: 42vh;
+  background-color: rgba(214, 216, 212);
+  border: 4px solid black;
+  box-shadow: inset 0px 10px 15px 10px rgba(0, 0, 0, 0.6);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.pokemon-photo {
+  max-width: 6.5vw;
+  width: 100%;
+  height: 12vh;
+  padding: 1vh 0;
+  margin-top: 1vh;
+  background-color: rgb(234, 235, 233);
+  border: 4px solid black;
+  box-shadow:  0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex; /* Asegúrate de que el contenedor use flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.pokemon-sprite {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.pokemon-text{
+  font-size: 0.9rem;
+  height: 20vh;
+  margin-top: 20px;
+  margin-left: 10px;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  align-items:flex-start;
+  text-align: left;
+}
+
+.pokemon-name {
+  width: 24vh;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.pokemon-data {
+  font-size: 0.8rem;
+  padding: 0 0.5rem;
+  max-width: 90%;
+  margin-top: 1rem;
+}
+
+.pokemon-list {
+  width: 24vh;
+  height: 40vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.pokemon-button {
+  display:block;
+  width:80%;
+  padding:1vh;
+  background-color: rgb(235, 228, 45);
+  box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.pokemon-button.active {
+  background-color: rgb(253, 247, 80);
+  width:90%;
+  padding:2vh;
+}
+
+.pokemon-search-button {
+  display:block;
+  width:80%;
+  padding:1vh;
+  background-color: rgb(235, 228, 45);
+  box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.search-input-wrapper{
+  display:none;
+  position:absolute;
+  top:300px;
+  width:200px;
+  height:100px;
+  border-radius: 16px;
+  border:2px solid black;
+  background-color:royalblue;
+  box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.6);
+  background-color: rgb(235, 228, 45);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1vh;
+
+}
+
+.search-input-wrapper.active {
+  display:flex;
+
+}
+
+.search-input-wrapper input{
+  font-weight: bolder;
+  width:50%;
+}
+
+
+li{
+  margin-bottom:1vh;
+}
+
+.bold-profile{
+  font-weight:bold; 
+  align-self: center;
+  border-bottom: 1px solid black; 
+  width:20vh; 
+  text-align:center; 
+}
+
+.bold-info{
+  font-weight:bold; 
+  display:inline;
+}
+
+.control-wrapper {
+  margin-top: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 40vh;
+}
+
+.sticks-wrapper {
+  position: relative;
+  height: 18vh;
+}
+
+.up-button, .down-button, .right-button, .left-button {
+  position: absolute;
+  width:6vh;
+  height:6vh;
+  background-color: rgb(63, 61, 72);
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6), -2px 2px 3px rgba(0, 0, 0, 0.6);
+
+}
+
+.up-button {
+  background-image: url("./images/triangulo.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+}
+
+.down-button {
+  background-image: url("./images/triangulo_down.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  bottom: 0;
+}
+
+.right-button {
+  background-image: url("./images/triangulo_left.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  right: 0;
+  top: 33%;
+}
+
+.left-button{
+  background-image: url("./images/triangulo_right.png");
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  top: 33%;
+  left: 80px;
+}
+
+.buttons-wrapper {
+  position: relative;
+}
+
+.a-button{
+  width:105px;
+  height:105px;
+  position:absolute;
+  border-radius: 50px;
+  background-color: rgb(63, 61, 72);
+  bottom:10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.b-button{
+  width:105px;
+  height:105px;
+  position:absolute;
+  border-radius: 50px;
+  background-color: rgb(63, 61, 72);
+  right:25px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
