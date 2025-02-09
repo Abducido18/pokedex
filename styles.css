@@ -10,7 +10,6 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(105, 105, 105);;
   box-sizing: border-box;
-
   padding: 0;
   overflow: hidden;
 }
@@ -89,16 +88,17 @@ li {
 }
 
 .pokemon-info-wrapper {
-  width: 25vh;
-  height: 43vh;
+  width: 50%;
+  height: 90%;
   border: 5px solid rgb(218, 218, 218);
   border-radius: 10px;
   box-shadow: inset 0px 10px 10px 10px rgba(0, 0, 0, 0.5);
+  margin-left: 1vh;
 }
 
 .pokemon-info {
-  width: 24vh;
-  height: 42vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(214, 216, 212);
   border: 4px solid black;
   box-shadow: inset 0px 10px 15px 10px rgba(0, 0, 0, 0.6);
@@ -109,9 +109,8 @@ li {
 }
 
 .pokemon-photo {
-  max-width: 6.5vw;
-  width: 100%;
-  height: 12vh;
+  width: 50%;
+  height: 13vh;
   padding: 1vh 0;
   margin-top: 1vh;
   background-color: rgb(234, 235, 233);
@@ -131,18 +130,16 @@ li {
 
 .pokemon-text{
   font-size: 0.9rem;
-  height: 20vh;
   margin-top: 20px;
   margin-left: 10px;
   display:flex;
   align-items: center;
   flex-direction: column;
-  align-items:flex-start;
   text-align: left;
 }
 
 .pokemon-name {
-  width: 24vh;
+  width: 80%;
   font-size: 1.1rem;
   text-align: center;
   font-weight: bolder;
@@ -155,8 +152,11 @@ li {
   margin-top: 1rem;
 }
 
-.pokemon-list {
-  width: 24vh;
+.js-pokemon-list {
+  display: flex;
+  flex-direction: column;
+
+  width: 40%;
   height: 40vh;
   overflow-y: auto;
   display: flex;
@@ -183,8 +183,9 @@ li {
 }
 
 .pokemon-search-button {
-  display:block;
-  width:80%;
+  position: sticky;
+  top: 0px; /* Ajustar según sea necesario */
+  left: 50%;
   padding:1vh;
   background-color: rgb(235, 228, 45);
   box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
@@ -244,8 +245,7 @@ li{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  width: 40vh;
+  width: 67%;
 }
 
 .sticks-wrapper {
@@ -322,4 +322,258 @@ li{
   display:flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+  .game-body {
+    width: 49vh;
+    height: 90vh;
+    margin-top: 7vh;
+  }
+
+  .screen-wrapper {
+    width: 47vh;
+    height: 52vh;
+    margin-top: 2vh;
+  }
+
+  .screen {
+    width: 43vh;
+    height: 45vh;
+    background: url("./images/screen-background.png");
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2vh;
+  }
+  
+  .pokemon-info-wrapper {
+    width: 60%;
+    height: 42vh;
+    border: 2px solid rgb(218, 218, 218);
+    border-radius: 10px;
+    margin-left: 1vh;
+  }
+  
+  .pokemon-info {
+    width: 100%;
+    height: 100%;
+    border: 3px solid black;
+  }
+  .pokemon-photo {
+    width: 60%;
+    height: 13vh;
+    padding: 1vh 0;
+    margin-top: 1vh;
+    background-color: rgb(234, 235, 233);
+    border: 4px solid black;
+    box-shadow:  0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex; /* Asegúrate de que el contenedor use flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .pokemon-sprite {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  .pokemon-text{
+    font-size: 0.8rem;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  
+  .pokemon-name {
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .pokemon-data {
+    font-size: 0.7rem;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+  
+  .pokemon-button {
+    display:block;
+    width:80%;
+    padding:1vh;
+    background-color: rgb(235, 228, 45);
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .pokemon-button.active {
+    background-color: rgb(253, 247, 80);
+    width:90%;
+    padding:2vh;
+  }
+
+  .pokemon-list {
+    position: relative;
+    margin-top: 3vh;
+    width: 40%;
+    height: 37vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  .pokemon-search-button {
+    position: fixed;
+    transform: translateX(49%);
+    width: 13vh;
+    top: 58px; /* Ajustar según sea necesario */
+    padding:1vh;
+    background-color: rgb(235, 228, 45);
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .search-input-wrapper{
+    display:none;
+    position:absolute;
+    top:300px;
+    width:200px;
+    height:100px;
+    border-radius: 16px;
+    border:2px solid black;
+    background-color:royalblue;
+    box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.6);
+    background-color: rgb(235, 228, 45);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vh;
+  
+  }
+  
+  .search-input-wrapper.active {
+    display:flex;
+  
+  }
+  
+  .search-input-wrapper input{
+    font-weight: bolder;
+    width:50%;
+  }
+  
+  
+  li{
+    margin-bottom:1vh;
+  }
+  
+  .search-input-wrapper{
+    top:180px;
+  }
+  
+  .control-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 22%;
+    margin-top: 5vh;
+  }
+  
+  .sticks-wrapper {
+    position: relative;
+    width: 50%;
+    margin-left: 1vh;
+  }
+  
+  .up-button, .down-button, .right-button, .left-button {
+    position: absolute;
+    width:6vh;
+    height:6vh;
+    background-color: rgb(63, 61, 72);
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6), -2px 2px 3px rgba(0, 0, 0, 0.6);
+  
+  }
+  
+  .up-button {
+    background-image: url("./images/triangulo.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    top: 0;
+    left: 40%;
+    transform: translateX(-50%);
+    
+  }
+  
+  .down-button {
+    background-image: url("./images/triangulo_down.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 40%;
+    transform: translateX(-50%);
+  }
+  
+  .right-button {
+    background-image: url("./images/triangulo_left.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+  }
+  
+  .left-button{
+    background-image: url("./images/triangulo_right.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    left: 53%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .buttons-wrapper {
+    position: relative;
+    width: 50%;
+    height: 100%;
+  }
+  
+  .a-button{
+    width: 37%;
+    height: 8vh;
+    position:absolute;
+    border-radius: 50px;
+    background-color: rgb(63, 61, 72);
+    top: 0;
+    left: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .b-button{
+    width: 37%;
+    height: 8vh;
+    position:absolute;
+    border-radius: 50px;
+    background-color: rgb(63, 61, 72);
+    bottom:50px;
+    left: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
