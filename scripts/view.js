@@ -19,7 +19,7 @@ export function renderPokemon(pokemon) {
     <p class="bold-profile">Profile</p>
     <ul class="pokemon-data">
       <li><p class="bold-info">Height: </p> ${pokemon.height}</li>
-      <li><p class="bold-info"> Weight: </*p>${pokemon.weight}</li>
+      <li><p class="bold-info"> Weight: </p>${pokemon.weight}</li>
       <li><p class="bold-info">Type: </p> ${pokemon.type.join(', ')}</li>
       <li><p class="bold-info">Abilities: </p> ${pokemon.abilities.join(', ')}</li>
       <li><p class="bold-info">Moves: </p> ${pokemon.moves.join(', ')}</li>
