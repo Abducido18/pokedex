@@ -14,8 +14,30 @@ html, body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar-track
+{
+
+	border-radius: 10px;
+	background-color: none;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: none;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: none;
+}
+
 body {
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +156,8 @@ li {
   display:flex;
   align-items: center;
   flex-direction: column;
-  width: 25vh;;
+  width: 25vh;
+  overflow-y: auto;
 }
 
 .pokemon-name {
@@ -148,8 +171,8 @@ li {
   font-size: 0.8rem;
   margin-top: 1rem;
   width: 100%;
-}
 
+}
 
 .js-pokemon-list {
   margin-top: 3vh;
@@ -182,8 +205,8 @@ li {
 
 .pokemon-search-button {
   position: fixed;
-  width:9%;
-  top: 100px; /* Ajustar según sea necesario */
+  width:8.4%;
+  top: 90px; /* Ajustar según sea necesario */
   transform: translateX(0%);
   padding:1vh;
   background-color: rgb(235, 228, 45);
@@ -292,7 +315,7 @@ li{
   background-position: center; 
   background-repeat: no-repeat;
   top: 33%;
-  left: 80px;
+  left: 57px;
 }
 
 .buttons-wrapper {
@@ -300,8 +323,8 @@ li{
 }
 
 .a-button{
-  width:105px;
-  height:105px;
+  width:75px;
+  height:75px;
   position:absolute;
   border-radius: 50px;
   background-color: rgb(63, 61, 72);
@@ -312,8 +335,8 @@ li{
 }
 
 .b-button{
-  width:105px;
-  height:105px;
+  width:75px;
+  height:75px;
   position:absolute;
   border-radius: 50px;
   background-color: rgb(63, 61, 72);
@@ -325,9 +348,14 @@ li{
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 767px) {
+  .body {
+    height: unset;
+    overflow: unset;
+  }
+  
   .game-body {
-    width: 49vh;
-    height: 90vh;
+    width: 100%;
+    height: 100vh;
   }
 
   .screen-wrapper {
@@ -356,7 +384,7 @@ li{
   .pokemon-info {
     width: 100%;
     height: 100%;
-    border: 3px solid black;
+    border: 2px solid black;
   }
   .pokemon-photo {
     width: 60%;
@@ -367,9 +395,9 @@ li{
     border: 4px solid black;
     box-shadow:  0px 10px 15px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    display: flex; /* Asegúrate de que el contenedor use flexbox */
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
   }
   
   .pokemon-sprite {
@@ -377,11 +405,15 @@ li{
     height: auto;
     object-fit: contain;
   }
+
+  
   
   .pokemon-text{
-    font-size: 0.8rem;
+    width: 100%;
     margin-top: 0;
     margin-left: 0;
+    padding: 0 1vh;
+    overflow-x: hidden;
   }
   
   .pokemon-name {
@@ -392,6 +424,7 @@ li{
   }
   
   .pokemon-data {
+
     font-size: 0.7rem;
     margin-left: 5px;
     margin-top: 5px;
@@ -428,9 +461,9 @@ li{
   
   .pokemon-search-button {
     position: fixed;
-    transform: translateX(49%);
+    transform: translateX(0%);
     width: 13vh;
-    top: 58px; /* Ajustar según sea necesario */
+    top: 50px; /* Ajustar según sea necesario */
     padding:1vh;
     background-color: rgb(235, 228, 45);
     box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.2);
@@ -459,7 +492,7 @@ li{
   
   .search-input-wrapper.active {
     display:flex;
-  
+
   }
   
   .search-input-wrapper input{

@@ -89,6 +89,8 @@ function pokemonButtonEvents() {
       });
     });  
   }, 100);
+
+  updateButtonFocus(currentIndex);
 }
 
 const totalPokemon = 1010;
