@@ -206,7 +206,7 @@ li {
 .pokemon-search-button {
   position: fixed;
   width:8.4%;
-  top: 90px; /* Ajustar según sea necesario */
+  top: 135px; /* Ajustar según sea necesario */
   transform: translateX(0%);
   padding:1vh;
   background-color: rgb(235, 228, 45);
