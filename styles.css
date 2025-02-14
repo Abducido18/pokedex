@@ -48,9 +48,9 @@ li {
 
 body {
   display: grid;
-  place-items: center; /* Centra horizontal y verticalmente */
-  height: 100vh; /* Asegúrate de que el contenedor ocupe toda la altura de la pantalla */
-  margin: 0; /* Elimina el margen predeterminado */
+  place-items: center; 
+  height: 100vh;
+  margin: 0; 
 }
 /*******************************
  *  GameBoy Body Styles
@@ -194,8 +194,8 @@ body {
 
 .pokemon-button.active {
   background-color: rgb(253, 247, 80);
-  width:90%;
-  padding:2vh;
+  transform: scale(1.1);
+  padding:1vh;
 }
 
 .pokemon-search-button {
